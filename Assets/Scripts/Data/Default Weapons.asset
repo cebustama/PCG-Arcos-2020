@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e87d5a2180de5c84b9fb4545979a4ac1, type: 3}
+  m_Name: Default Weapons
+  m_EditorClassIdentifier: 
+  weapons:
+  - weapon: {fileID: 11400000, guid: 160d1cc9e7fb1b44b938393d477a9a18, type: 2}
+    rarity: 20
+  - weapon: {fileID: 11400000, guid: 3233a4ffe1b51a546a67c45a092e9dc2, type: 2}
+    rarity: 20
+  - weapon: {fileID: 11400000, guid: 8fb2f580e5c3b154197fecc9104fe9b7, type: 2}
+    rarity: 20
+  - weapon: {fileID: 11400000, guid: 25bb5281ba889ac4f9b26572973b03de, type: 2}
+    rarity: 20
+  - weapon: {fileID: 11400000, guid: c84aa9fa09e33024186aa9820b9df45f, type: 2}
+    rarity: 20
+  - weapon: {fileID: 11400000, guid: 3ecbf886e7a036f45909831a050c3d66, type: 2}
+    rarity: 20
+  - weapon: {fileID: 11400000, guid: d6f31bd8a62acd34f82d07486398ea06, type: 2}
+    rarity: 20
+  - weapon: {fileID: 11400000, guid: c2dda92625abf454ebea8906da4d2012, type: 2}
+    rarity: 20
+  - weapon: {fileID: 11400000, guid: 3dc7f69574701f64a972febce9adbb32, type: 2}
+    rarity: 20
+  bullets:
+  - bullet: {fileID: 11400000, guid: 7223a3ec56cdc384dace6f3e082e4831, type: 2}
+    rarity: 20
+  - bullet: {fileID: 11400000, guid: 842f803bb48bfe54b8fe72e5286ba243, type: 2}
+    rarity: 20
+  - bullet: {fileID: 11400000, guid: f01fa1d3c4412b34786e4104ec3829b4, type: 2}
+    rarity: 20
+  - bullet: {fileID: 11400000, guid: 2bc998530ad58834ab6bb53962188f81, type: 2}
+    rarity: 20
+  - bullet: {fileID: 11400000, guid: aec835da252dd8f4690426ac6cb7e79d, type: 2}
+    rarity: 20
+  - bullet: {fileID: 11400000, guid: 32be3e2286538234da136cad3752da51, type: 2}
+    rarity: 20
+  - bullet: {fileID: 11400000, guid: 57ce8330a9fe43e4fa724f60ff8ce54e, type: 2}
+    rarity: 20
+  - bullet: {fileID: 11400000, guid: 3b9ebccd7365dd043b7dff8248375bf4, type: 2}
+    rarity: 20
+  - bullet: {fileID: 11400000, guid: 91928a4bf4612e94ab3589d367932da3, type: 2}
+    rarity: 20

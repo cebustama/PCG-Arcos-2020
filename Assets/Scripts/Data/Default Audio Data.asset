@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a977e932dfdd988449111558a1387719, type: 3}
+  m_Name: Default Audio Data
+  m_EditorClassIdentifier: 
+  songs:
+  - clip: {fileID: 8300000, guid: 3d4a1e8e57c7b794fabf0a41463eadd1, type: 3}
+    alumno: 0
+  - clip: {fileID: 8300000, guid: 2c0e8787ea635fc419a152b55db6eaef, type: 3}
+    alumno: 5
+  - clip: {fileID: 8300000, guid: ff1dabeb563d6cd4cab71373a250d530, type: 3}
+    alumno: 7
+  - clip: {fileID: 8300000, guid: fffc2cd62018f874c871de69e23e3ec6, type: 3}
+    alumno: 8
+  - clip: {fileID: 8300000, guid: 4da44d9631cc21a4bbf3f5630bc516d0, type: 3}
+    alumno: 4
+  - clip: {fileID: 8300000, guid: 6da2419974b27c240b0db3e8453707da, type: 3}
+    alumno: 6
+  - clip: {fileID: 8300000, guid: eca391f459284b14b8b170b9f55ed35a, type: 3}
+    alumno: 1
+  - clip: {fileID: 8300000, guid: fbb85fe9ca8312f45929f42cfdef437f, type: 3}
+    alumno: 2
+  - clip: {fileID: 8300000, guid: 66e4118af3e904540966947aade61c8e, type: 3}
+    alumno: 5
