@@ -16,6 +16,7 @@ MonoBehaviour:
   modifier: Fortnite
   alumno: 1
   speed: 0
-  followAmount: 0
-  randomMoveAmount: 0
-  sizeFactor: 1
+  followAmount: 5
+  randomMoveAmount: 5
+  sizeFactor: 1.2
+  hpBonus: 20

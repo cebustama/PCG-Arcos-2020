@@ -4,10 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 using TMPro;
+using System;
 
 public class GameGenerator : MonoBehaviour
 {
     public static GameGenerator instance;
+
+    [Header("UI")]
+    public TextMeshProUGUI gameTitle;
+    public TextMeshProUGUI gameStory;
+    public TextMeshProUGUI gameWinText;
+    public TextMeshProUGUI gameLoseText;
 
     [Header("References")]
     public SpriteRenderer floor;
@@ -18,10 +25,45 @@ public class GameGenerator : MonoBehaviour
     public AudioData audioData;
     public WeaponData weaponData;
     public CharacterData characterData;
+    public ObjectData objectData;
 
     PlayerController player;
 
-    Dictionary<Alumno, int> alumnoCount; 
+    Dictionary<Alumno, int> alumnoCount;
+    Alumno villano;
+    string chosenReason;
+
+    [HideInInspector]
+    public int objectId;
+
+    [HideInInspector]
+    public int numberOfObjects;
+
+    public List<string> reasons = new List<string>
+    {
+        "mató a mis padres.",
+        "No me deja jugar en mi xbox.",
+        "Se acabó el agua.",
+        "No hay pan.",
+        "está modo owo",
+        "Tomó mi chocman.",
+        "Dijo soluciones al revés.",
+        "necesitamos una razón para derrotar al enemigo.",
+        "YOLO.",
+        "se robó mi cuchara.",
+        "se comió mi manjarate",
+        "La profecía lo dice.",
+        "Quería ser un héroe.",
+        "quiero la dominación mundial.",
+        "Me despertó mientras dormía.",
+        "No compró el té.",
+        "Es team Jacob (referencia twilight)(que asco, qué mal sasón OwO)",
+        "Se tomó mi chocomilk.",
+        "La historia tiene que continuar.",
+        "Se llevó a mi gato.",
+        "Me debía plata.",
+        "me puso mala nota"
+    };
 
     private void Awake()
     {
@@ -65,28 +107,57 @@ public class GameGenerator : MonoBehaviour
 
         GeneratePlayer();
 
+        GenerateGameMenu();
+
         SendStats();
+    }
+
+    void GenerateGameMenu()
+    {
+        gameTitle.text = GenerateGameTitle();
+
+        gameStory.text = GenerateGameStory();
+
+        gameWinText.text = player.playerName + " ha derrotado a " + villano.ToString() + " gracias al poder de los " + objectData.GetObject(objectId).name;
+        gameLoseText.text = player.playerName + " ha sido derrotado por " + villano.ToString() + " quien nunca se arrepintió porque " + chosenReason;
+    }
+
+    string GenerateGameTitle()
+    {
+        string objectName = objectData.GetObject(objectId).name;
+        return player.playerName + " y los " + numberOfObjects + " " + objectName;
+    }
+
+    string GenerateGameStory()
+    {
+        Array values = Enum.GetValues(typeof(Alumno));
+        villano = (Alumno)values.GetValue(UnityEngine.Random.Range(0, values.Length));
+        chosenReason = reasons[UnityEngine.Random.Range(0, reasons.Count)];
+        return player.playerName + " debe derrotar al malvado " + villano.ToString() +  " porque " + chosenReason;
     }
 
     void GenerateGameData()
     {
-        GameData.ColorOption floorColor = gameData.floorColors[Random.Range(0, gameData.floorColors.Length)];
+        GameData.ColorOption floorColor = gameData.floorColors[UnityEngine.Random.Range(0, gameData.floorColors.Length)];
         Camera.main.backgroundColor = floorColor.color;
         floor.color = floorColor.color;
 
         // Add count
         AddToAlumno(floorColor.alumno);
 
-        GameData.ColorOption wallColor = gameData.wallColors[Random.Range(0, gameData.wallColors.Length)];
+        GameData.ColorOption wallColor = gameData.wallColors[UnityEngine.Random.Range(0, gameData.wallColors.Length)];
         gameData.tileMaterial.color = wallColor.color;
 
         // Add count
         AddToAlumno(wallColor.alumno);
+
+        objectId = UnityEngine.Random.Range(0, objectData.objects.Length);
+        numberOfObjects = UnityEngine.Random.Range(6, 13);
     }
 
     void GenerateAudioData()
     {
-        AudioData.AudioOption song = audioData.songs[Random.Range(0, audioData.songs.Length)];
+        AudioData.AudioOption song = audioData.songs[UnityEngine.Random.Range(0, audioData.songs.Length)];
         AudioManager.instance.PlayMusic(song.clip);
 
         AddToAlumno(song.alumno);
@@ -94,7 +165,7 @@ public class GameGenerator : MonoBehaviour
 
     void GeneratePlayer()
     {
-        GameData.ColorOption lightColor = gameData.lightColors[Random.Range(0, gameData.lightColors.Length)];
+        GameData.ColorOption lightColor = gameData.lightColors[UnityEngine.Random.Range(0, gameData.lightColors.Length)];
         player.Generate(lightColor.color);
         AddToAlumno(lightColor.alumno);
     }

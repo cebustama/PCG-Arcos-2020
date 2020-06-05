@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{EECDA098-E8AE-3A74-6656-ACADC13302D0}</ProjectGuid>
+    <ProjectGuid>{8A8F902E-6D3B-EFCB-D1B7-D3952B3283E4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -65,6 +65,9 @@
     <Compile Include="Assets\AnchorSnap\AnchorSnap.cs" />
     <Compile Include="Assets\Enemy.cs" />
     <Compile Include="Assets\EnemyExample.cs" />
+    <Compile Include="Assets\EnemySpawner.cs" />
+    <Compile Include="Assets\ImportantObject.cs" />
+    <Compile Include="Assets\ObjectSpawner.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\Data\AudioData.cs" />
@@ -74,6 +77,7 @@
     <Compile Include="Assets\Scripts\Data\EnemyModifier.cs" />
     <Compile Include="Assets\Scripts\Data\GameData.cs" />
     <Compile Include="Assets\Scripts\Data\Hats\HatObject.cs" />
+    <Compile Include="Assets\Scripts\Data\ObjectData.cs" />
     <Compile Include="Assets\Scripts\Data\PlayerData.cs" />
     <Compile Include="Assets\Scripts\Data\RoomData.cs" />
     <Compile Include="Assets\Scripts\Data\WeaponData.cs" />
@@ -638,73 +642,73 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/cebus/Desktop/GameDev/Unity/PCG Arcos 2020 Class/PCG-Arcos-2020/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>

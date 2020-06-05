@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
 {
     [Header("Settings")]
     public bool moving = false;
+    public GameObject drop;
+    public string name;
     public float size = 1f;
     public Color color;
     public float speed;
@@ -17,14 +19,12 @@ public class Enemy : MonoBehaviour
 
     public Vector2 velocity;
     Rigidbody2D rb;
+    float maxHealth;
 
     [Header("Behaviours")]
     public float random = 0f;
     public float followPlayer = 0f;
     public float line;
-
-    [Header("Modifiers")]
-    public EnemyModifier modifiers;
 
     [Header("References")]
     public Image healthBar;
@@ -36,6 +36,7 @@ public class Enemy : MonoBehaviour
     Transform player;
     Vector2 step;
     GameGenerator generator;
+    GameManager manager;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +50,7 @@ public class Enemy : MonoBehaviour
         //moving = false;
 
         generator = FindObjectOfType<GameGenerator>();
+        manager = FindObjectOfType<GameManager>();
 
         Invoke("Generate", 1f);
     }
@@ -56,7 +58,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!moving)
+        if (!moving || !manager.gameStarted)
         {
             return;
         }
@@ -89,6 +91,15 @@ public class Enemy : MonoBehaviour
     public void ModifyHealth(float amount)
     {
         health += amount;
+
+        // Health Bar
+        healthBar.fillAmount = (health / maxHealth);
+
+        if (health <= 0)
+        {
+            if (drop != null) Instantiate(drop, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 
     public void Generate()
@@ -100,12 +111,26 @@ public class Enemy : MonoBehaviour
         hatRenderer.sprite = hat.sprite;
 
         // Modifiers
-        enemyName.text = hat.modifier + " Bob";
+        enemyName.text = hat.modifier + " " + name;
 
         speed += hat.speed;
         followPlayer += hat.followAmount;
         random += hat.randomMoveAmount;
 
         transform.localScale *= hat.sizeFactor;
+
+        health += hat.hpBonus;
+
+        maxHealth = health;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+        if (player != null)
+        {
+            // ONE HIT KO
+            player.Die();
+        }
     }
 }

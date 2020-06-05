@@ -13,7 +13,8 @@ public enum Alumno
     JUAN,
     BRANCO,
     RODRIGO,
-    FRANCO
+    FRANCO,
+    JP
 }
 
 [CreateAssetMenu()]

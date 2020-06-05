@@ -17,6 +17,8 @@ public class Room : MonoBehaviour
 
     public void Update()
     {
+        if (player == null) return;
+
         Vector2 dist = new Vector2(transform.position.x - player.transform.position.x, transform.position.y - player.transform.position.y);
         dist.x = Mathf.Abs(dist.x);
         dist.y = Mathf.Abs(dist.y);

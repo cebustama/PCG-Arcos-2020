@@ -16,6 +16,7 @@ MonoBehaviour:
   modifier: Don
   alumno: 0
   speed: 0
-  followAmount: 0
+  followAmount: 5
   randomMoveAmount: 0
-  sizeFactor: 3
+  sizeFactor: 1.5
+  hpBonus: 5

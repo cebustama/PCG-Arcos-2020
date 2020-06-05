@@ -16,6 +16,7 @@ MonoBehaviour:
   modifier: Taco
   alumno: 7
   speed: 0
-  followAmount: 0
-  randomMoveAmount: 0
-  sizeFactor: 1
+  followAmount: 20
+  randomMoveAmount: 20
+  sizeFactor: 0.8
+  hpBonus: 5

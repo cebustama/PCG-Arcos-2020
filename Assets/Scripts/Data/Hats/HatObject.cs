@@ -14,5 +14,6 @@ public class HatObject : ScriptableObject
     public float speed = 0f;
     public float followAmount = 0f;
     public float randomMoveAmount = 0f;
-    public float sizeFactor = 1f; 
+    public float sizeFactor = 1f;
+    public float hpBonus = 0f;
 }

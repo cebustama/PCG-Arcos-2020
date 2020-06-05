@@ -36,7 +36,7 @@ public class Tile : MonoBehaviour
 
         if (s.prefab == null) return;
 
-        Instantiate(s.prefab, transform.parent);
+        Instantiate(s.prefab, transform.position, Quaternion.identity, transform.parent);
 
         Destroy(gameObject);
     }
